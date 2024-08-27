@@ -88,13 +88,13 @@ def linkedin_login(driver, email, password):
     driver.find_element(By.ID, 'password').send_keys(password)
     time.sleep(5)
     driver.find_element(By.XPATH, "//button[contains(@class, 'btn__primary--large') and @type='submit']").click()
-    time.sleep(10)  
+    time.sleep(15)  
 
 # Function to check if the URL is valid
 def check_url(url, driver):
     try:
         driver.get(url)
-        time.sleep(4)  
+        time.sleep(8)  
         if "This page doesn’t exist" in driver.page_source or "linkedin.com/404/" in driver.current_url:
             return "Invalid"
         else:
